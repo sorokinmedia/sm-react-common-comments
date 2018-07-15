@@ -33,6 +33,12 @@ describe('Alert component', () => {
 		expect(container.exists()).toBe(true)
 	})
 
+
+	it('should render the component', () => {
+		const { container } = setup()
+		expect(container.exists()).toBe(true)
+	})
+
 	it('should change h4 if modify', () => {
 		const { container } = setup({
 			form: { parent: 1, username: 'john' },
