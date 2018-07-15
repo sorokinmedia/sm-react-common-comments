@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1531414528028" clover="3.2.0">
+  <project timestamp="1531414528028" name="All files">
+    <metrics statements="36" coveredstatements="34" conditionals="61" coveredconditionals="41" methods="23" coveredmethods="22" elements="120" coveredelements="97" complexity="0" loc="36" ncloc="36" packages="8" files="8" classes="8">
+      <package name="src">
+        <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\index.js">
+          <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+          <line num="1" count="7" type="cond" truecount="3" falsecount="1"/>
+        </file>
+      </package>
+      <package name="src.Modal">
+        <metrics statements="10" coveredstatements="8" conditionals="33" coveredconditionals="19" methods="10" coveredmethods="9"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\Modal\index.js">
+          <metrics statements="10" coveredstatements="8" conditionals="33" coveredconditionals="19" methods="10" coveredmethods="9"/>
+          <line num="1" count="3" type="cond" truecount="5" falsecount="3"/>
+          <line num="3" count="3" type="cond" truecount="12" falsecount="7"/>
+          <line num="5" count="3" type="cond" truecount="1" falsecount="1"/>
+          <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="3" type="stmt"/>
+          <line num="31" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalBody">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalBody\index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="6" type="cond" truecount="3" falsecount="1"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalClose">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalClose\index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="6" type="cond" truecount="3" falsecount="1"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalFooter">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalFooter\index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="4" count="4" type="cond" truecount="3" falsecount="1"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalForm">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalForm\index.js">
+          <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="7" count="14" type="cond" truecount="4" falsecount="0"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="27" count="2" type="stmt"/>
+          <line num="35" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalHeader">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalHeader\index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="6" type="cond" truecount="3" falsecount="1"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.ModalTitle">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="index.js" path="C:\Work\sm-front-common\sm-react-common-modal\src\ModalTitle\index.js">
+          <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="6" type="cond" truecount="3" falsecount="1"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
