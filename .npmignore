@@ -14,3 +14,4 @@
 /lib/
 /yarn-error.log
 /rollup.config.js
+/coverage/

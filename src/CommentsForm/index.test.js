@@ -12,13 +12,13 @@ function setup(customProps, lifeCycle = false) {
 	const props = {
 		form: {
 			parent: 1,
-			username: 'john'
+			userName: 'john'
 		},
 		modify: false,
 		cancelModifyFunc: jest.fn(() => 'cancelModifyFunc'),
-		cancelReplyFunc: jest.fn(),
-		onChange: jest.fn(),
-		onSubmit: jest.fn(),
+		cancelReplyFunc: jest.fn(() => 'cancelReplyFunc'),
+		onChange: jest.fn(() => 'onChange'),
+		onSubmit: jest.fn(() => 'onSubmit'),
 		...customProps
 	}
 
@@ -26,7 +26,7 @@ function setup(customProps, lifeCycle = false) {
 	return { container, props }
 }
 
-describe('Alert component', () => {
+describe('CommentsForm component', () => {
 
 	it('should render the component', () => {
 		const { container } = setup()
@@ -35,7 +35,7 @@ describe('Alert component', () => {
 
 	it('should change h4 if modify', () => {
 		const { container } = setup({
-			form: { parent: 1, username: 'john' },
+			form: { parent: 1, userName: 'john' },
 			modify: true
 		})
 		expect(container.find('[name="comments-form"] h4').text()).toEqual('Изменить')
@@ -43,47 +43,17 @@ describe('Alert component', () => {
 		expect(container.find('[name="comments-form"] p a').prop('onClick')()).toEqual('cancelModifyFunc')
 	})
 
-	// it('should componentDidMount called', () => {
-	// 	jest.spyOn(Alert.prototype, 'componentDidMount');
-	// 	shallow(<Alert />)
-	// 	expect(Alert.prototype.componentDidMount).toHaveBeenCalled();
-	// 	Alert.prototype.componentDidMount.mockClear()
-	// });
-	//
-	//
-	// it('should show alert message', () => {
-	// 	const { container } = setup({ showAlert: 'error message' }, true)
-	// 	const instance = container.instance();
-	// 	spy = jest.spyOn(instance, 'showErrorAlert')
-	// 	instance.msg.show = jest.fn()
-	// 	instance.componentDidMount();
-	// 	expect(spy).toHaveBeenCalled();
-	// });
-	//
-	// it('should componentDidUpdate called', () => {
-	// 	const { container } = setup({})
-	// 	const instance = container.instance();
-	// 	instance.showErrorAlert = jest.fn(() => true)
-	// 	container.setProps({
-	// 		updateResponse: { error: 'Error message' },
-	// 		clearResponse: jest.fn()
-	// 	});
-	// 	expect(instance.componentDidUpdate).toHaveBeenCalled()
-	// });
-	//
-	// it('should the component has div with the required class', () => {
-	// 	expect(container.find('.modal-backdrop')).toBeTruthy()
-	// });
-	//
-	// it('should backdrop clicked once', () => {
-	// 	const instance = container.instance();
-	// 	const spy = jest
-	// 		.spyOn(instance, 'handleAreaClick')
-	// 		.mockImplementation(() => true)
-	// 	container.instance().forceUpdate()
-	// 	container.update()
-	// 	container.find('.modal-backdrop').simulate('click');
-	// 	expect(spy).toHaveBeenCalled()
-	// });
+	it('should have help block div with cancel button', () => {
+		const { container } = setup()
+		expect(container.exists('.comments-form')).toBe(true)
+		expect(container.find('.help-block').text()).toEqual('Комментарий для john (Отменить)')
+		expect(container.find('.help-block a').prop('onClick')()).toEqual('cancelReplyFunc')
+	})
 
+	it('should have MessagesForm with required props', () => {
+		const { container } = setup()
+		expect(container.exists('MessagesForm')).toBe(true)
+		expect(container.find('MessagesForm').prop('onChangeForm')()).toEqual('onChange')
+		expect(container.find('MessagesForm').prop('onSubmitForm')()).toEqual('onSubmit')
+	})
 })

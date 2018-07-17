@@ -4,12 +4,12 @@ import React, { Component } from 'react'
 import CKEditor from 'sm-react-common-ckeditor'
 import { InlineSmallLoader } from 'sm-react-common-loader'
 
-const empty = '<p>&nbsp;</p>';
+const empty = '<p>&nbsp;</p>'
 
 export default class MessagesForm extends Component {
 
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			reset: false,
 			errorMsg: ''
@@ -23,7 +23,7 @@ export default class MessagesForm extends Component {
 				if (e.ctrlKey && e.keyCode === 13) {
 					self.handleSubmit()
 				}
-			});
+			})
 	}
 
 	handleChange = (ev) => {
@@ -38,16 +38,20 @@ export default class MessagesForm extends Component {
 		if (value && value !== empty) {
 			this.props.onSubmitForm(value)
 			this.setState({ reset: true })
-		} else this.setState({ errorMsg: 'Вы пытаетесь отправить пустой комментарий' })
+		} else {
+			this.setState({ errorMsg: 'Вы пытаетесь отправить пустой комментарий' })
+		}
 	}
 
 	handleRevision = (ev) => {
 		ev.preventDefault()
-		const { taskId, value } = this.props;
+		const { taskId, value } = this.props
 		if (value && value !== empty) {
-			this.props.rejectTask(taskId, value);
+			this.props.rejectTask(taskId, value)
 			this.setState({ reset: true })
-		} else this.setState({ errorMsg: 'Необходимо указать причину доработки' })
+		} else {
+			this.setState({ errorMsg: 'Необходимо указать причину доработки' })
+		}
 	}
 
 	render() {
@@ -60,11 +64,12 @@ export default class MessagesForm extends Component {
 			labelText,
 			isLoading,
 			buttonText,
-			preFormHtml,
-		} = this.props;
+			preFormHtml
+		} = this.props
 		const { errorMsg } = this.state
 		return (
 			<form>
+				{/* что такое preFormHtml */}
 				{preFormHtml}
 				<div className={'form-group ' + (error ? 'has-error' : '')}>
 					{labelText
@@ -125,7 +130,7 @@ MessagesForm.propTypes = {
 	date: PropTypes.object,
 	status: PropTypes.bool,
 	preFormHtml: PropTypes.object,
-	rejectTask: PropTypes.func,
+	rejectTask: PropTypes.func
 }
 
 MessagesForm.defaultProps = {
