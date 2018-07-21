@@ -27,7 +27,12 @@ export default class MessagesForm extends Component {
 	}
 
 	handleChange = (ev) => {
-		this.props.onChangeForm(ev)
+		const string = ev.replace(/href="(.*?)"/, (m, $1) => {
+			const link = $1.replace(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)/, '')
+			return `href="http://${link}" target="_blank" rel="nofollow noopener"`
+		})
+
+		this.props.onChangeForm(string)
 		this.setState({ errorMsg: '', reset: false })
 
 	}
