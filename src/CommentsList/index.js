@@ -37,7 +37,7 @@ function CommentsList(props) {
 							(user.id === elem.author.id) && isModify
 								? (
 									<a
-										className="comment-reply-link"
+										className="btn btn-primary btn-xs btn-flat comment-reply-link"
 										onClick={() => props.handleModifyLink(elem)}
 									>
 										Изменить
@@ -47,7 +47,7 @@ function CommentsList(props) {
 									: !readOnly
 										? (
 											<a
-												className="comment-reply-link"
+												className="btn btn-primary btn-xs btn-flat comment-reply-link"
 												onClick={props.handleReplyLink(
 													elem.author.username,
 													elem.id

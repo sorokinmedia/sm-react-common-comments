@@ -12329,7 +12329,7 @@ function CommentsList(props) {
 					user.id === elem.author.id && isModify ? React__default.createElement(
 						'a',
 						{
-							className: 'comment-reply-link',
+							className: 'btn btn-primary btn-xs btn-flat comment-reply-link',
 							onClick: function onClick() {
 								return props.handleModifyLink(elem);
 							}
@@ -12338,7 +12338,7 @@ function CommentsList(props) {
 					) : user.id === elem.author.id && !isModify ? '' : !readOnly ? React__default.createElement(
 						'a',
 						{
-							className: 'comment-reply-link',
+							className: 'btn btn-primary btn-xs btn-flat comment-reply-link',
 							onClick: props.handleReplyLink(elem.author.username, elem.id)
 						},
 						'\u041E\u0442\u0432\u0435\u0442\u0438\u0442\u044C'
