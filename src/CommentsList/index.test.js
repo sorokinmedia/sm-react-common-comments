@@ -59,15 +59,15 @@ describe('CommentsList component', () => {
 		})
 		it('should have Modify button', () => {
 			const { container } = setup({ isModify: true })
-			expect(container.find('.lesson-comment-body .comment-reply-link').length).toEqual(1)
-			expect(container.find('.lesson-comment-body .comment-reply-link').prop('onClick')()).toEqual('handleModifyLink')
-			expect(container.find('.lesson-comment-body .comment-reply-link').text()).toEqual('Изменить')
+			expect(container.find('.lesson-comment-body .comment-reply-link a').length).toEqual(1)
+			expect(container.find('.lesson-comment-body .comment-reply-link a').prop('onClick')()).toEqual('handleModifyLink')
+			expect(container.find('.lesson-comment-body .comment-reply-link a').text()).toEqual('Изменить')
 		})
 
 		it('should have reply button', () => {
 			const { container } = setup({ isModify: false, readOnly: false, user: { id: 4 } })
-			expect(container.find('.lesson-comment-body .comment-reply-link').length).toEqual(1)
-			expect(container.find('.lesson-comment-body .comment-reply-link').text()).toEqual('Ответить')
+			expect(container.find('.lesson-comment-body .comment-reply-link a').length).toEqual(1)
+			expect(container.find('.lesson-comment-body .comment-reply-link a').text()).toEqual('Ответить')
 		})
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { timestampToReadableDigitDate } from '../services/DateHelper';
-import { findAndReplaceLinks } from '../services/UrlReplacer';
+import { timestampToReadableDigitDate } from '../services/DateHelper'
+import { findAndReplaceLinks } from '../services/UrlReplacer'
 import './style.css'
 
 function CommentsList(props) {
@@ -13,7 +13,7 @@ function CommentsList(props) {
 		user,
 		handleModifyLink,
 		handleReplyLink
-	} = props;
+	} = props
 	return comments.map(elem => (elem.parent_id === parent
 		? (
 			<div
@@ -36,26 +36,30 @@ function CommentsList(props) {
 						{
 							(user.id === elem.author.id) && isModify
 								? (
-									<a
-										className="btn btn-primary btn-xs btn-flat comment-reply-link"
-										onClick={() => props.handleModifyLink(elem)}
-									>
-										Изменить
-									</a>)
+									<div className="comment-reply-link">
+										<a
+											className="btn btn-primary btn-xs btn-flat comment-reply-link"
+											onClick={() => props.handleModifyLink(elem)}
+										>
+											Изменить
+										</a>
+									</div>)
 								: ((user.id === elem.author.id) && !isModify)
-									? ''
-									: !readOnly
-										? (
+								? ''
+								: !readOnly
+									? (
+										<div className="comment-reply-link">
 											<a
-												className="btn btn-primary btn-xs btn-flat comment-reply-link"
+												className="btn btn-primary btn-xs btn-flat"
 												onClick={props.handleReplyLink(
 													elem.author.username,
 													elem.id
 												)}
 											>
-											Ответить
-											</a>)
-										: ''}
+												Ответить
+											</a>
+										</div>)
+									: ''}
 					</div>
 					<div className="lesson-comment-footer">
 						{/* <label>Урок:</label>&nbsp;
@@ -83,12 +87,12 @@ CommentsList.propTypes = {
 	readOnly: PropTypes.bool,
 	handleReplyLink: PropTypes.func,
 	handleModifyLink: PropTypes.func
-};
+}
 
 CommentsList.defaultProps = {
 	readOnly: false,
 	parent: 0,
 	isModify: false
-};
+}
 
 export default CommentsList
