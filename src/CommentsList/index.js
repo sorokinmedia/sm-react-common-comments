@@ -38,28 +38,28 @@ function CommentsList(props) {
 								? (
 									<div className="comment-reply-link">
 										<a
-											className="btn btn-primary btn-xs btn-flat comment-reply-link"
+											className="btn btn-primary btn-xs btn-flat"
 											onClick={() => props.handleModifyLink(elem)}
 										>
 											Изменить
 										</a>
 									</div>)
 								: ((user.id === elem.author.id) && !isModify)
-								? ''
-								: !readOnly
-									? (
-										<div className="comment-reply-link">
-											<a
-												className="btn btn-primary btn-xs btn-flat"
-												onClick={props.handleReplyLink(
-													elem.author.username,
-													elem.id
-												)}
-											>
+									? ''
+									: !readOnly
+										? (
+											<div className="comment-reply-link">
+												<a
+													className="btn btn-primary btn-xs btn-flat"
+													onClick={props.handleReplyLink(
+														elem.author.username,
+														elem.id
+													)}
+												>
 												Ответить
-											</a>
-										</div>)
-									: ''}
+												</a>
+											</div>)
+										: ''}
 					</div>
 					<div className="lesson-comment-footer">
 						{/* <label>Урок:</label>&nbsp;
