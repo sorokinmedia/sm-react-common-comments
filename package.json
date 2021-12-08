@@ -66,6 +66,8 @@
     "build:prod": "npm run clean && cross-env NODE_ENV=production rollup -c",
     "build:dev": "cross-env NODE_ENV=development rollup -c",
     "deploy": "npm version patch;npm publish;git push;git push --tags",
+    "clean": "rimraf dist/*",
+    "build": "npm run clean && webpack -p --progress --verbose --config ./webpack.prod.config.js",
     "test": "jest",
     "test:coverage": "jest --coverage --watchAll",
     "preinstall": "npx npm-force-resolutions",
